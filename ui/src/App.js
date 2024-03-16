@@ -1,6 +1,6 @@
 import './App.css';
-// import Navbar from './components/Navbar';
-// import LandingPage from './Landingpage/page';
+import Navbar from './components/Navbar';
+import LandingPage from './Landingpage/page';
 import PricingPage from './Pricingpage/page';
 
 function App() {

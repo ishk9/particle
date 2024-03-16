@@ -1,6 +1,17 @@
 import React from 'react'
 import { BsArrowRight } from "react-icons/bs";
 
+const description = [
+    {'Hobby': {
+        '1': 'biubinoinio'
+    }},
+    {'Pro': {
+
+    }},
+    {'Enterprise': {
+
+    }},
+]
 
 function Card({props}) {
     return (
