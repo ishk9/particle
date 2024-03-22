@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsArrowRight } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
   return (
@@ -14,7 +15,7 @@ function LandingPage() {
                 Demo
             </button>
             <button className='text-black px-28 p-3 bg-zinc-200 rounded-md flex justify-center items-center hover:bg-transparent hover:text-zinc-200 hover:border-[1px]'>
-                <p className='font-semibold'>Deploy</p>      
+                <Link to="/deploy" className='font-semibold'>Deploy</Link>      
                 <BsArrowRight className='ml-2'size={20} />
             </button>
         </div>
