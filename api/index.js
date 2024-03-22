@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { generateId } from './utils/generateId.js';
-
+import { simpleGit } from 'simple-git';
 
 const PORT = 8000;
 const app = express();
@@ -12,10 +12,13 @@ app.use(bodyParser.json());
 
 app.post('/deploy', async (req, res) => {
   try{
-    const data = req.body;
-    console.log(data.url);
+    const url = req.body.url;
+
     var userId = generateId();
     console.log(userId);
+
+    await simpleGit().clone(url, `models/${userId}`);
+
     res.json({ success: true, userId: userId});
   }
   catch(err) {
