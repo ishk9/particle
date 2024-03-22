@@ -4,9 +4,11 @@ import axios from 'axios';
 
 function DeployPage() {
     const [url, setUrl] = useState('');
+    const [userId, setUserId] = useState('');
     const sendUrl = () => {
         axios.post("http://localhost:8000/deploy", {url: url}).then((res) => {
-            console.log(res.data.message);
+            console.log(res.data.userId);
+            setUserId(res.data.userId);
         }).catch((err) => {
             console.log(err);
         })
@@ -20,6 +22,7 @@ function DeployPage() {
         className="min-h-screen min-w-screen flex flex-col justify-center items-center
          bg-black bg-gradient-to-tr from-zinc-900/50 to-zinc-700/30"
         >
+            <p className="text-white">{userId}</p>
             <div className="flex w-screen justify-center items-center">
                 <input 
                     onChange={handleUrlChange}
