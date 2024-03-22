@@ -1,10 +1,11 @@
 import React from 'react'
 import { FaRegSnowflake } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const buttonInfo = [
-    {id: 0, title: 'Features'},
-    {id: 0, title: 'Reviews'},
-    {id: 0, title: 'Pricing'}
+    {id: 0, title: 'Features', to: '/features'},
+    {id: 0, title: 'Reviews', to: '/reviews'},
+    {id: 0, title: 'Pricing', to: '/pricing'}
 ];
 
 function Navbar() {
@@ -19,7 +20,7 @@ function Navbar() {
       <div className="flex w-1/5 justify-around items-center">
         {
             buttonInfo.map((item) => (
-                <button id={item.id} className="text-zinc-400 hover:text-zinc-100">{item.title}</button>
+                <Link to={item.to} id={item.id} className="text-zinc-400 hover:text-zinc-100">{item.title}</Link>
             ))
         }
         
